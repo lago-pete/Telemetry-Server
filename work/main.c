@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include "server.h"
 
-int main (void){
-    printf("\nHello, World\n");
+
+int main(void){
+    printf("hello, you stud!");
+    display();
     return 0;
 }

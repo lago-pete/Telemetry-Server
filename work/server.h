@@ -1,2 +1,3 @@
 
-void display(void);
+
+void startServer(void);

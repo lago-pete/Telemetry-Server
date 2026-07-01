@@ -1,16 +1,19 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g
-TARGET = mainOBJS = main.o server.o client.o
-
-all: $(TARGET)
 
 
+all: server client
 
-$(TARGET): $(OBJS)
-	$(CC) -o $(TARGET) $(OBJS)
+server: main_server.o server.o 
+	$(CC) -o server main_server.o server.o 
+
+client: main_client.o client.o 
+	$(CC) -o client main_client.o client.o 
+
+
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f server client
